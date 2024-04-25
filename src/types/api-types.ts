@@ -72,7 +72,17 @@ export type NewOrderRequest = {
   user: string;
 };
 
-export type AllOdersResponse = {
+export type UpdateOrderRequest = {
+  userId: string;
+  orderId: string;
+};
+
+export type AllOrdersResponse = {
   success: boolean;
   orders: Order[];
+};
+
+export type OrderDetailsResponse = {
+  success: boolean;
+  order: Order;
 };
