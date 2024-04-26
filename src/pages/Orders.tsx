@@ -3,12 +3,11 @@ import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Column } from "react-table";
+import { SkeletonLoader } from "../components/Loading";
 import TableHOC from "../components/admin/TableHOC";
 import { useMyOrdersQuery } from "../redux/api/orderAPI";
-import { CustomError } from "../types/api-types";
-import { UserReducerInitialState } from "../types/reducers-types";
-import { SkeletonLoader } from "../components/Loading";
 import { RootState } from "../redux/reducer/store";
+import { CustomError } from "../types/api-types";
 
 type DataType = {
   _id: string;
