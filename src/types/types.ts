@@ -60,3 +60,75 @@ export type Order = {
   };
   _id: string;
 };
+
+type CountAndChange = {
+  revenue: number;
+  product: number;
+  user: number;
+  order: number;
+};
+
+type LastestTransaction = {
+  _id: string;
+  amount: number;
+  discount: number;
+  quantity: number;
+  status: string;
+};
+
+export type Stats = {
+  categoryCount: Record<string, number>[];
+  changePercentage: CountAndChange;
+  counts: CountAndChange;
+  charts: {
+    order: number[];
+    revenue: number[];
+  };
+  userRatio: {
+    male: number;
+    female: number;
+  };
+  latestTransaction: LastestTransaction[];
+};
+
+export type Pie = {
+  orderFullfillment: {
+    processing: number;
+    shipping: number;
+    delivered: number;
+  };
+  productCategories: Record<string, number>[];
+  stockAvailablity: {
+    inStock: number;
+    outOfStock: number;
+  };
+  revenueDistribution: {
+    netMargin: number;
+    discount: number;
+    productionCost: number;
+    burnt: number;
+    marketingCost: number;
+  };
+  usersAgeGroup: {
+    teen: number;
+    adult: number;
+    old: number;
+  };
+  adminCustomers: {
+    admin: number;
+    customer: number;
+  };
+};
+
+export type Bar = {
+  users: number[];
+  products: number[];
+  orders: number[];
+};
+
+export type Line = {
+  users: number[];
+  products: number[];
+  discount: number[];
+  revenue: number[];
+};
