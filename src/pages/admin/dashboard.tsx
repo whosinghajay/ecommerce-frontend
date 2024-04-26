@@ -10,6 +10,9 @@ import { BarChart, DoughnutChart } from "../../components/admin/Charts";
 import Table from "../../components/admin/DashboardTable";
 import { useStatsQuery } from "../../redux/api/dashboardAPI";
 import { RootState } from "../../redux/reducer/store";
+import { getLastMonth } from "../../utils/features";
+
+const { last6Months } = getLastMonth();
 
 const userImg =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp";
@@ -72,6 +75,7 @@ const Dashboard = () => {
               <div className="revenue-chart">
                 <h2>Revenue & Transaction</h2>
                 <BarChart
+                  labels={last6Months}
                   data_2={stats.charts.order}
                   data_1={stats.charts.revenue}
                   title_1="Revenue"
